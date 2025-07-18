@@ -3,6 +3,8 @@ from rich.console import Console
 from rich.panel import Panel
 
 from commands.help import run as help
+from commands.user import run as user
+
 
 console = Console()
 
@@ -24,6 +26,8 @@ def main():
     
     if command == "help":
         help(args)
+    elif command == "user":
+        user(args)
     else:
         console.print(f"[red]Unknown command:[/red] {command}")
         console.print("Run [yellow]cfcli help[/yellow] for help.")
