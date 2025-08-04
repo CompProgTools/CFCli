@@ -7,7 +7,6 @@ from commands.user import run as user
 from commands.contests import run as contests
 from commands.problemset import run as problemset
 
-
 console = Console()
 
 def intro():
