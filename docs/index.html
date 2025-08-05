@@ -50,6 +50,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#command-format">Command Format</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -124,6 +126,12 @@
 - Latest Pip version</p>
 <h2 id="setup">Setup</h2>
 <p>The setup for cf-cli is very minimal. Since there are parts of the <a href="https://codeforces.com/apiHelp">Codeforces API</a> that require authentication, it is the only environment variable that is needed.</p>
+<h2 id="command-format">Command Format</h2>
+<p>The format for CF-Cli is quite simple. The base command is <code>cf-cli</code> and by running it, you will get the start command as a greeting. After that, you are required to use subcommands as every other command is considered a subcommand in the program.</p>
+<p>Here is the format for subcommand requests</p>
+<pre><code class="language-bash">cf-cli `subcommand` {data} `--flag`
+</code></pre>
+<p>Keep in mind that flags are optional and not needed.</p>
               
             </div>
           </div><footer>
@@ -172,5 +180,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-08-05 05:00:28.794928+00:00
+Build Date UTC : 2025-08-05 15:59:29.033041+00:00
 -->

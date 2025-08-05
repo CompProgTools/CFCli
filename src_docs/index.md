@@ -44,3 +44,15 @@ The requirements for CF-Cli are pretty simple since most of the work is done by 
 ## Setup
 
 The setup for cf-cli is very minimal. Since there are parts of the [Codeforces API](https://codeforces.com/apiHelp) that require authentication, it is the only environment variable that is needed.
+
+## Command Format
+
+The format for CF-Cli is quite simple. The base command is `cf-cli` and by running it, you will get the start command as a greeting. After that, you are required to use subcommands as every other command is considered a subcommand in the program.
+
+Here is the format for subcommand requests
+
+```bash
+cf-cli `subcommand` {data} `--flag`
+```
+
+Keep in mind that flags are optional and not needed.
