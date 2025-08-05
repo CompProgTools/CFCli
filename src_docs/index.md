@@ -37,7 +37,9 @@ cf-cli
 
 ## Requirements
 
-
+The requirements for CF-Cli are pretty simple since most of the work is done by script itself and uses the Codeforces API to get raw data (These requirements are if you're either doing development, or building from source):
+- Python 3.8+
+- Latest Pip version
 
 ## Setup
 

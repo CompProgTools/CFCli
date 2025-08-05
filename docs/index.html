@@ -44,6 +44,12 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -84,6 +90,40 @@
               
                 <h1 id="cfcli-official-documentation-page">CFCli Official Documentation Page</h1>
 <h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#command-format">Command Format</a></li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p><strong>Keep in mind that Windows is the only supported OS for now (due to cross-system issues)</strong></p>
+<ul>
+<li>Go to the <a href="https://github.com/CompProgTools/CFCli/releases">latest install</a> of CF-Cli on the repository</li>
+<li>Download the latest install for your specifc operating system</li>
+<li>Copy the pathname of your install location (.exe, .app, etc)</li>
+</ul>
+<p>Now you will make the commands accessible by a global command.</p>
+<p>If you're on windows, try the following:</p>
+<ul>
+<li>Copy the pathname of your installation</li>
+<li>Press Windows + S</li>
+<li>Type in <code>Edit the system environment variables</code></li>
+<li>Once in there, click on <code>Environment Variables</code></li>
+<li>Under <code>System Variables</code>, select Path and click Edit</li>
+<li>Click <strong>New</strong> and paste the path that you copied</li>
+<li>Save everything and exit</li>
+</ul>
+<p>Once that's done, restart your terminal and you're good to go.</p>
+<p>Now you can test your installation by running:</p>
+<pre><code class="language-bash">cf-cli
+</code></pre>
+<h2 id="requirements">Requirements</h2>
+<p>The requirements for CF-Cli are pretty simple since most of the work is done by script itself and uses the Codeforces API to get raw data (These requirements are if you're either doing development, or building from source):
+- Python 3.8+
+- Latest Pip version</p>
+<h2 id="setup">Setup</h2>
+<p>The setup for cf-cli is very minimal. Since there are parts of the <a href="https://codeforces.com/apiHelp">Codeforces API</a> that require authentication, it is the only environment variable that is needed.</p>
               
             </div>
           </div><footer>
@@ -132,5 +172,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-08-04 21:37:51.901817+00:00
+Build Date UTC : 2025-08-05 05:00:28.794928+00:00
 -->
