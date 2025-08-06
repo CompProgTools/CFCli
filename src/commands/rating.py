@@ -7,7 +7,7 @@ from datetime import datetime
 console = Console()
 
 
-def run(args):
+def run(args) -> None:
     if len(args) < 1:
         console.print("[red]Error: Please provide a Codeforces username.[/red]")
         return

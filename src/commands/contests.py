@@ -5,7 +5,7 @@ from datetime import datetime
 
 console = Console()
 
-def run(args):
+def run(args) -> None:
     try:
         response = requests.get("https://codeforces.com/api/contest.list", timeout=10)
         if response.status_code != 200 or not response.text:

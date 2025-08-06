@@ -5,7 +5,7 @@ from rich.table import Table
 
 console = Console()
 
-def run(args):
+def run(args) -> None:
     parser = argparse.ArgumentParser(prog="cf-cli problemset", add_help=False)
     parser.add_argument("-count", type=int, default=1000, help="Number of problems to display (default: 1000)")
     

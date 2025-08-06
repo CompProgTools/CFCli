@@ -2,7 +2,7 @@ from rich.console import Console
 
 console = Console()
 
-def run(args):
+def run(args) -> None:
     console.print(
         """
 [bold underline cyan]cfcli - Codeforces CLI Tool[/bold underline cyan]

@@ -7,6 +7,7 @@ from rich.align import Align
 from rich.table import Table
 from rich.progress import Progress
 from rich import box
+import typing
 
 console = Console()
 
