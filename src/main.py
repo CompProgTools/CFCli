@@ -8,9 +8,14 @@ from commands.contests import run as contests
 from commands.problemset import run as problemset
 from commands.rating import run as ratings
 
+import typing
+
 console = Console()
 
-def intro():
+def intro() -> None:
+    """
+    The startup message/dialogue for the program
+    """
     console.print(Panel.fit(
         "[bold cyan]cf-cli[/bold cyan]\n\n"
         "A CLI tool for interacting with the Codeforces API.\n\n"
@@ -18,7 +23,10 @@ def intro():
         title="Welcome to cf-cli!"
     ))
     
-def main():
+def main() -> None:
+    """
+    The main function ie the entry point for the cf cli system
+    """
     if len(sys.argv) == 1:
         intro()
         return
