@@ -23,10 +23,18 @@ RANK_COLOURS = {
     "legendary grandmaster": "bold red",
 }
 
-def getColour(rank):
+def getColour(rank) -> str:
+    """Displays the colour of the user based on the ranking table
+
+    Args:
+        rank (str): The rank of the user fetched from Codeforces Data
+
+    Returns:
+        str: The colour value of their given ranking
+    """
     return RANK_COLOURS.get(rank.lower(), "white")
 
-def run(args):
+def run(args) -> None:
     if len(args) < 1:
         console.print("[red]Usage: cfcli user <handle>[/red]")
         return
