@@ -7,6 +7,7 @@ from commands.user import run as user
 from commands.contests import run as contests
 from commands.problemset import run as problemset
 from commands.rating import run as ratings
+from commands.log import run as log
 
 import typing
 
@@ -44,6 +45,8 @@ def main() -> None:
         problemset(args)
     elif command == "rating":
         ratings(args)
+    elif command == "log":
+        log(args)
     else:
         console.print(f"[red]Unknown command:[/red] {command}")
         console.print("Run [yellow]cf-cli help[/yellow] for help.")
