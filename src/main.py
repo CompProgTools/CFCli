@@ -8,6 +8,7 @@ from commands.contests import run as contests
 from commands.problemset import run as problemset
 from commands.rating import run as ratings
 from commands.log import run as log
+from commands.streak import run as streak
 
 import typing
 
@@ -47,6 +48,8 @@ def main() -> None:
         ratings(args)
     elif command == "log":
         log(args)
+    elif command == "streak":
+        streak(args)
     else:
         console.print(f"[red]Unknown command:[/red] {command}")
         console.print("Run [yellow]cf-cli help[/yellow] for help.")
