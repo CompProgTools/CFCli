@@ -151,3 +151,20 @@ Here is the sample for user *poetaio*
 ```
 
 Not only that, but it also shows their rating graph through matplotlib.
+
+### Log
+
+The log command lets you log a problem that is part of the standard codeforces problemset as a solved problem. This allows you to add a day to your coding streak!
+
+Run this by using `cf-cli log <contestId>/<problemLetter>
+
+- Contest Id: This is different from the contest number. The contest id is the number in the url of the problem. Take for example (this)[https://codeforces.com/problemset/problem/2131/H] problem, it was part of Codeforces Round 1042, but the contest id is the number part of its url (which is 2131)
+- Problem Letter: This is pretty self explanatory, the problem letter is the index of the problem in the contest as a letter. You can find this by looking for the captial letter after the contest id in the url.
+
+For example, running:
+
+```bash
+cf-cli log 2131/H
+```
+
+Logs the problem *Sea, You & copriMe* to your solved problems
