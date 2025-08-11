@@ -14,7 +14,8 @@ def run(args) -> None:
     help            Show this help message
     contests        List upcoming contests
     user <handle>   Get info about a Codeforces user
-    problems        Search or explore problems
-    submissions     Check submission results
-    tracker         Manage your problem tracker
+    problemset      Search or explore problems
+    streak          Display the current streak
+    rating          Check their rating changes
+    log             Log solved problems to add to streak
 """)

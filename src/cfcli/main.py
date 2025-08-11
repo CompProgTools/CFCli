@@ -2,13 +2,13 @@ import sys
 from rich.console import Console
 from rich.panel import Panel
 
-from commands.help import run as help
-from commands.user import run as user
-from commands.contests import run as contests
-from commands.problemset import run as problemset
-from commands.rating import run as ratings
-from commands.log import run as log
-from commands.streak import run as streak
+from cfcli.commands.help import run as help
+from cfcli.commands.user import run as user
+from cfcli.commands.contests import run as contests
+from cfcli.commands.problemset import run as problemset
+from cfcli.commands.rating import run as ratings
+from cfcli.commands.log import run as log
+from cfcli.commands.streak import run as streak
 
 import typing
 
