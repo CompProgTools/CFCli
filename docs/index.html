@@ -66,6 +66,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#rating">Rating</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#log">Log</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -199,6 +201,17 @@
 └────────────────────────────────┴──────┴────────────┴────────────┴───────┘
 </code></pre>
 <p>Not only that, but it also shows their rating graph through matplotlib.</p>
+<h3 id="log">Log</h3>
+<p>The log command lets you log a problem that is part of the standard codeforces problemset as a solved problem. This allows you to add a day to your coding streak!</p>
+<p>Run this by using `cf-cli log <contestId>/<problemLetter></p>
+<ul>
+<li>Contest Id: This is different from the contest number. The contest id is the number in the url of the problem. Take for example (this)[https://codeforces.com/problemset/problem/2131/H] problem, it was part of Codeforces Round 1042, but the contest id is the number part of its url (which is 2131)</li>
+<li>Problem Letter: This is pretty self explanatory, the problem letter is the index of the problem in the contest as a letter. You can find this by looking for the captial letter after the contest id in the url.</li>
+</ul>
+<p>For example, running:</p>
+<pre><code class="language-bash">cf-cli log 2131/H
+</code></pre>
+<p>Logs the problem <em>Sea, You &amp; copriMe</em> to your solved problems</p>
               
             </div>
           </div><footer>
@@ -247,5 +260,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-08-11 04:49:18.813893+00:00
+Build Date UTC : 2025-08-11 05:11:32.944919+00:00
 -->
