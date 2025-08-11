@@ -52,6 +52,22 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#command-format">Command Format</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#base">Base</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#help">Help</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#user">User</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contests">Contests</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#problemset">Problemset</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rating">Rating</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -97,31 +113,23 @@
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#setup">Setup</a></li>
 <li><a href="#command-format">Command Format</a></li>
+<li><a href="#commands">Commands</a></li>
 </ul>
 <h2 id="installation">Installation</h2>
-<p><strong>Keep in mind that Windows is the only supported OS for now (due to cross-system issues)</strong></p>
-<ul>
-<li>Go to the <a href="https://github.com/CompProgTools/CFCli/releases">latest install</a> of CF-Cli on the repository</li>
-<li>Download the latest install for your specifc operating system</li>
-<li>Copy the pathname of your install location (.exe, .app, etc)</li>
-</ul>
-<p>Now you will make the commands accessible by a global command.</p>
-<p>If you're on windows, try the following:</p>
-<ul>
-<li>Copy the pathname of your installation</li>
-<li>Press Windows + S</li>
-<li>Type in <code>Edit the system environment variables</code></li>
-<li>Once in there, click on <code>Environment Variables</code></li>
-<li>Under <code>System Variables</code>, select Path and click Edit</li>
-<li>Click <strong>New</strong> and paste the path that you copied</li>
-<li>Save everything and exit</li>
-</ul>
-<p>Once that's done, restart your terminal and you're good to go.</p>
-<p>Now you can test your installation by running:</p>
+<p>Head to <a href="https://pypi.org/project/cfcli-py-tool/">the pypi page</a> and copy the command at the top.</p>
+<p>In our case it will be <code>pip install cfcli-py-tool</code>.</p>
+<p>Open your terminal (or command line if you're using windows) and paste the following:</p>
+<pre><code class="language-bash">pip install cfcli-py-tool
+</code></pre>
+<p>If this gives an error, please try:</p>
+<pre><code class="language-bash">pip3 install cfcli-py-tool
+</code></pre>
+<p>This will install CFCli from the PyPi package manager.</p>
+<p>In order to test your installation, please run:</p>
 <pre><code class="language-bash">cf-cli
 </code></pre>
 <h2 id="requirements">Requirements</h2>
-<p>The requirements for CF-Cli are pretty simple since most of the work is done by script itself and uses the Codeforces API to get raw data (These requirements are if you're either doing development, or building from source):
+<p>Since the project is a pip (python package manager) package, you are required to have the following in order for it to work.
 - Python 3.8+
 - Latest Pip version</p>
 <h2 id="setup">Setup</h2>
@@ -132,6 +140,65 @@
 <pre><code class="language-bash">cf-cli `subcommand` {data} `--flag`
 </code></pre>
 <p>Keep in mind that flags are optional and not needed.</p>
+<h2 id="commands">Commands</h2>
+<p>CFCli has a few very simple commands.</p>
+<h3 id="base">Base</h3>
+<p>The base command with so subcommands no flags is just <code>cf-cli</code>. This is the welcome/startup text.</p>
+<h3 id="help">Help</h3>
+<p>By running,</p>
+<pre><code class="language-bash">cf-cli help
+</code></pre>
+<p>You will be able to see each of the subcommands provided by CFCli that you can use. They include, help, user, contests, problemset, rating, and streak</p>
+<h3 id="user">User</h3>
+<p>The <code>user</code> subcommand lets you view the stats of a user registered on Codeforces. It shows their hande, max rating, current rating (with its appropriate colour), the title image (ie profile picture), country, name, as well as contribution</p>
+<p>Usage:</p>
+<pre><code class="language-bash">cf-cli user &lt;username&gt;
+</code></pre>
+<p>Here is the output for the Codeforces user <a href="https://codeforces.com/profile/tourist">tourist</a> by running the command <code>cf-cli user tourist</code> (the output is subject to change as ratings and metadata changes).</p>
+<pre><code class="language-bash"> Username      tourist              ╭─────── Title Photo ────────╮
+ Country       Belarus              │                            │
+ Name          Gennady Korotkevich  │      View Title Photo      │
+ Max Rating    4009                 │                            │
+ Contribution  106                  ╰────────────────────────────╯
+</code></pre>
+<h3 id="contests">Contests</h3>
+<p>The contests command lets you view the upcoming contest on Codeforces that are available to view on <a href="https://codeforces.com/contests">the website</a>. The command formats them in a table and has the contest id, the name of the contest, and the time until start (in seconds).</p>
+<p>Here is an example output that is shown by running <code>cf-cli contests</code>:</p>
+<pre><code class="language-bash">            Upcoming Codeforces Contests
+┏━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓
+┃ ID   ┃ Name                      ┃ Start in (sec) ┃
+┡━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩
+│ 2132 │ Codeforces Round (Div. 3) │ 917534         │
+└──────┴───────────────────────────┴────────────────┘
+</code></pre>
+<h3 id="problemset">Problemset</h3>
+<p>If you want to see the last <em>x</em> problems in the codeforces problemset, you can do so by running:</p>
+<pre><code class="language-bash">cf-cli problemset -count &lt;number&gt;
+</code></pre>
+<p>This shows the last <number> problems on the problemset.</p>
+<p>Here is an example output</p>
+<pre><code class="language-bash">                               First 2 Codeforces Problems
+┏━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ ID    ┃ Name               ┃ Points ┃ Tags                                             ┃
+┡━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ 2131H │ Sea, You &amp; copriMe │    N/A │ brute force, graphs, greedy, math, number theory │
+│ 2131G │ Wafu!              │    N/A │ bitmasks, brute force, dp, math                  │
+└───────┴────────────────────┴────────┴──────────────────────────────────────────────────┘
+</code></pre>
+<p>This was the output I recieved when I ran <code>cf-cli problemset -count 2</code>. <strong>These outputs are subject to change since the problemset changes actively</strong></p>
+<h3 id="rating">Rating</h3>
+<p>The rating command is used to show the rating history of a particular user on the platform. More specifically, it shows their ratings in each contest they've attended so far.</p>
+<p>The command to use the rating subcommand is <code>cf-cli rating &lt;user&gt;</code></p>
+<p>Here is the sample for user <em>poetaio</em></p>
+<pre><code class="language-bash">                         poetaio's Rating History
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Contest Name                   ┃ Rank ┃ Old Rating ┃ New Rating ┃ Delta ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│ Codeforces Round 919 (Div. 2)  │ 8453 │          0 │        447 │  +447 │
+│ Codeforces Round 1032 (Div. 3) │ 9605 │        447 │        740 │  +293 │
+└────────────────────────────────┴──────┴────────────┴────────────┴───────┘
+</code></pre>
+<p>Not only that, but it also shows their rating graph through matplotlib.</p>
               
             </div>
           </div><footer>
@@ -180,5 +247,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-08-05 16:29:50.706453+00:00
+Build Date UTC : 2025-08-11 04:49:18.813893+00:00
 -->
