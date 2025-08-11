@@ -8,7 +8,7 @@ def run(args) -> None:
 [bold underline cyan]cfcli - Codeforces CLI Tool[/bold underline cyan]
 
 [bold]Usage:[/bold]
-    cfcli [command] [options]
+    cf-cli [command] [options]
 
 [bold]Commands:[/bold]
     help            Show this help message
