@@ -168,3 +168,24 @@ cf-cli log 2131/H
 ```
 
 Logs the problem *Sea, You & copriMe* to your solved problems
+
+### Streak
+
+The streak system in cfcli lets you log problems and have them be added to your streak. Its pretty simple, to view your streak run:
+
+```
+cf-cli streak
+```
+
+This should a little something like this:
+
+```bash
+╭───────────────────╮
+│ Streak Stats      │
+│ Current Streak: 0 │
+│ Max Streak: 0     │
+│ Days Logged: 1    │
+╰───────────────────╯
+```
+
+It might not be the same since stats could differ.
